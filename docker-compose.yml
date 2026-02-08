@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    image: python:3.9-slim
+    working_dir: /app
+    volumes:
+      - .:/app
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    ports:
+      - "5000:5000"
+    command: python app.py
